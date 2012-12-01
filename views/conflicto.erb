@@ -1,0 +1,20 @@
+<table border=1>
+	<tr style="border: 5px;">
+	   <td>ASUNTO</td>		
+	   <td>ALCANCE</td>	   
+	   <td>SALIDA</td>
+	   <td>DEMANDANTE</td>
+	   <td>DEMANDADO</td>
+	   <td>MEDIDAS DE PRESION</td>	
+	</tr>
+	<% @conflicto.each do |conflicto| %>		
+	<tr>
+	   <td><%= conflicto.asunto %></td>		
+	   <td><%= conflicto.alcance %></td>	   
+	   <td><%= conflicto.salida %></td>
+	   <td><%= conflicto.demandante.inspect %></td>
+	   <td><%= conflicto.demandado.inspect %></td>
+	   <td><%= conflicto.medidasPresion.inspect %></td>
+	<% end %>
+	</tr>
+</table>

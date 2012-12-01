@@ -1,0 +1,8 @@
+Código en miniInfo.erb<br/>
+
+ID: <%= @id %> <br/>
+blablablabla <br/>
+blablablabla <br/>
+blablablabla <br/>
+blablablabla <br/>
+blablablabla <br/>
