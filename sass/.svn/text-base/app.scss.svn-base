@@ -8,7 +8,7 @@
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 
-// @import "compass/css3";
+@import "compass/css3";
 // @import "foundation/settings";
 // @import "foundation/functions/all";
 
@@ -50,7 +50,43 @@
 // @import "foundation/components/modules/mqueries";
 
 .ultimosConflictos{
-  a{
-    display: inline;
+  a:link, a:visited{
+    display: block;
+  }
+}
+body{
+  background-image: url("../images/build/bg-all.png");
+  color: #7D7D7D;
+}
+body > .row{
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+footer{
+  color: #fff;
+  background-image: url("../images/build/bg-footer.jpg");
+  hr{
+    border: dotted 1px #909090;
+  }
+}
+h4, h3, h2{font-weight: normal;}
+
+.dal-top{
+  background-image: url("../images/build/bgTop.jpg");
+     ul{
+       background-color: #041121;
+     }
+}
+
+//Tooltip Map
+.infoTooltip{
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.listaResumidaConf{
+  li{
+    margin-bottom: 1px solid #2BA6CB !important;
   }
 }

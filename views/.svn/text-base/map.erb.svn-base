@@ -1,5 +1,130 @@
 <script src="/js/lib/leaflet/leaflet.js"></script>
 <link rel="stylesheet" href="/js/lib/leaflet/leaflet.css" />
-<script src="/js/map.js"></script>
 
-<div class = 'map' id = 'map'></div>
+
+<div id='map'></div>
+<div id='map2'></div>
+
+<script>
+$(document).ready(function() {
+   var usuarioResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var usuarioLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_usuario.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var usuarioActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_usuario.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var parcialResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var parcialLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var parcialActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var completoResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var completoLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var completoActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var terminadoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-statur_activo_icon.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var progresoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-status_terminado_icon.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var normalIcon = new L.Icon();
+
+   var parcialAr = new Array();
+   var totalAr = new Array();
+   var usuarioAr = new Array();
+
+   var activoAr = new Array();
+   var terminadoAr = new Array();
+
+   <% @conflictos.each do |conflicto|%>
+      <%=
+         unless conflicto.lugares.first.x.nil?
+            erb(:'marker_conflicto.js',:layout => false,:locals => {:conflicto => conflicto,:toForm => false,:highlightMarker => false})
+         end
+      %>
+   <% end %>
+
+   var baseLayer = L.tileLayer('http://{s}.tile.cloudmade.com/{APIKEY}/997/256/{z}/{x}/{y}.png', {
+      APIKEY: '5a27ed92198543449be5cb9a79e7e829',
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+   });
+
+   var parcialLayer = L.layerGroup(parcialAr);
+   var totalLayer = L.layerGroup(totalAr);
+   var usuarioLayer = L.layerGroup(usuarioAr);
+
+
+
+   var map = L.map('map',{
+      center: new L.LatLng(-16.49831, -68.1451),
+      zoom: 5,
+      layers: [baseLayer,parcialLayer,totalLayer,usuarioLayer]
+      });
+
+   L.control.layers(
+                     {
+                        //'Cobertura': baseLayer,
+                     },
+                     {
+                        "Parcial":parcialLayer,
+                        "Total":totalLayer,
+                        "Usuario":usuarioLayer
+                     }
+                  ).addTo(map);
+
+   var baseLayer2 = L.tileLayer('http://{s}.tile.cloudmade.com/{APIKEY}/997/256/{z}/{x}/{y}.png', {
+      APIKEY: '5a27ed92198543449be5cb9a79e7e829',
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+   });
+   var activoLayer = L.layerGroup(activoAr);
+   var terminadoLayer = L.layerGroup(terminadoAr);
+
+   var map2 = L.map('map2',{
+      center: new L.LatLng(-16.49831, -68.1451),
+      zoom: 5,
+      layers: [baseLayer2,activoLayer,terminadoLayer]
+      });
+   L.control.layers(
+                     {
+                        //'Cobertura': baseLayer,
+                     },
+                     {
+                        "Activos":activoLayer,
+                        "Terminados":terminadoLayer
+                     }
+                  ).addTo(map2);
+
+   $('#map2').hide();
+});
+</script>

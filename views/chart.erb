@@ -1,0 +1,119 @@
+ 
+  <script type="text/javascript">   
+ $(function () {    
+        var chart;
+        $(document).ready(function() {
+<% for i in 1..4%>
+{      
+    json = <%= i %>;      
+            <% if i == 1%>
+            var titleX = <%= @json1.to_json %> ;
+            var seriesY = <%= @series1.to_json %> ;
+            var titleChart =  '<%= @title1 %>' ;
+            var titleY  =  '<%= @titleY1 %>' ;
+            //<%= @labelX = @json1 %>;
+            //<%= @labelY = @series1 %>;
+            <% end %>             
+            <% if i == 2%>
+            var titleX = <%= @json2.to_json %> ;
+            var seriesY = <%= @series2.to_json %> ;
+            var titleChart =  '<%= @title2 %>' ;
+            var titleY  =  '<%= @titleY2 %>' ;
+            //<%= @labelX = @json2 %>;
+            //<%= @labelY = @series2 %>;
+            <% end %>
+            <% if i == 3%>
+            var titleX = <%= @json3.to_json %> ;
+            var seriesY = <%= @series3.to_json %> ;
+            var titleChart =  '<%= @title3 %>' ;
+            var titleY  =  '<%= @titleY3 %>' ;
+            //<%= @labelX = @json3 %>;
+            //<%= @labelY = @series3 %>;
+            <% end %> 
+            <% if i == 4%>
+            var titleX = <%= @json4.to_json %> ;
+            var seriesY = <%= @series4.to_json %> ;
+            var titleChart =  '<%= @title4 %>' ;
+            var titleY  =  '<%= @titleY4 %>' ;
+            //<%= @labelX = @json4 %>;
+            //<%= @labelY = @series4 %>;
+            <% end %> 
+            chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container'+json,
+                    type: '<%= @type%>',
+                    marginRight: 130,
+                    marginBottom: 25
+                },
+                title: { 
+                    text: titleChart,
+                    x: -10 
+                },
+                subtitle: {
+                    text: '<%= @conflictos.first.asunto%>',
+                    x: -20
+                },
+                xAxis: titleX ,
+                yAxis: {
+                    title: {
+                        text: titleY
+                    },
+                    plotLines: [{
+                        value: 2,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    formatter: function() {
+                            return '<b>'+ this.series.name +'</b><br/>'+
+                            this.x +': ' + 'Nivel de cobertura ' + this.y;
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -10,
+                    y: 100,
+                    borderWidth: 0
+                },
+                series: seriesY
+            });
+        
+        }
+    <% end %>    
+    $('#container1').show();
+    $('#container2').hide();
+    $('#container3').hide();
+    $('#container4').hide();
+    });
+});
+
+</script>
+<script src="/js/highchart/highcharts.js"></script>
+<script src="/js/highchart/modules/exporting.js"></script>
+
+<div id="container1" style="margin-bottom:5%  position: relative; width: 700px; height: 380px;"></div>
+<div id="container2" style="margin-bottom:5%  position: relative; width: 700px; height: 380px;"></div>
+<div id="container3" style="margin-bottom:5%  position: relative; width: 700px; height: 380px;"></div>
+<div id="container4" style="margin-bottom:5%  position: relative; width: 700px; height: 380px;"></div>
+
+
+ 
+<table border=1 style="margin-top: 5%;">
+    <tr style="border: 5px; font-weight:bold;">
+        <td>Tipo</td> 
+        <%@labelX["categories"].each do |label|%>    
+            <td><%= label%></td> 
+        <%end%>    
+    </tr>
+        <%@labelY.each do |label|%>
+    <tr>
+            <td style="border: 5px; font-weight:bold;"><%= label["name"]%></td>
+            <%label["data"].each do |value|%>
+                <td><%= value%></td>
+            <%end%>    
+        <%end%>    
+    </tr>
+</table>

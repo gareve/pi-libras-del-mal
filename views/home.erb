@@ -1,19 +1,3 @@
-<!-- Header and Nav -->
-
-<div class="row">
-    <div class="three columns">
-        <h1><img src="http://placehold.it/400x100&text=Logo" /></h1>
-    </div>
-    <div class="nine columns">
-        <ul class="nav-bar right">
-            <li><a href="#">Mapa de Conflictos</a></li>
-            <li><a href="#">Datos Estadisticos</a></li>
-        </ul>
-    </div>
-</div>
-
-<!-- End Header and Nav -->
-
 
 <!-- First Band (Slider) -->
 <!-- The Orbit slider is initialized at the bottom of the page by calling .orbit() on #slider -->
@@ -21,12 +5,19 @@
 <div class="row">
     <div class="twelve columns">
         <div id="slider">
-            <img src="images/slider-img-01.jpg" />
-            <img src="images/slider-img-02.jpg" />
-            <img src="images/slider-img-03.jpg" />
+            <div class="orbit-slider"><img src="images/slider-img-01.jpg" /><h4>Test name1</h4><div>Test content1</div></div>
+            <div class="orbit-slider"><img src="images/slider-img-02.jpg" /><h4>Test name2</h4><div>Test content2</div></div>
+            <div class="orbit-slider"><img src="images/slider-img-03.jpg" /><h4>Test name3</h4><div>Test content3</div></div>
+
+            <!--<img src="images/slider-img-02.jpg" />-->
+            <!--<img src="images/slider-img-03.jpg" />-->
             <!--<img src="http://placehold.it/1000x400&text=[img 4]" />-->
         </div>
 
+
+      <span class="orbit-caption" id="captionOne">Here is a caption...</span>
+      <span class="orbit-caption" id="captionTwo">Here is a caption2...</span>
+      <span class="orbit-caption" id="captionThree">Here is a caption3...</span>
         <hr />
     </div>
 </div>
@@ -37,50 +28,50 @@
 <div class="row">
 
     <div class="four columns ultimosConflictos">
-        <!--<img src="http://placehold.it/400x300&text=[img]" />-->
+      <div class="panel">
         <h4>Ultimos Conflictos.</h4>
         <p>
-            <a href="#">Conflicto #1</a>
-            <a href="#">Conflicto #2</a>
-            <a href="#">Conflicto #3</a>
+         <ul class="listaResumidaConf">
+            <% @ultimos1.each do |conflicto| %>
+               <li><a href='/conflicto/<%= conflicto.id %>'><%= conflicto.asunto %></a></li>
+            <% end %>
+         </ul>
         </p>
+      </div>
     </div>
 
     <div class="four columns ultimosConflictosRep">
-        <!--<img src="http://placehold.it/400x300&text=[img]" />-->
+      <div class="panel">
         <h4>Ultimos Conflictos Reportados.</h4>
         <p>
-            <a href="#">Conflicto reportado usuario general #1</a>
-            <a href="#">Conflicto reportado usuario general #2</a>
-            <a href="#">Conflicto reportado usuario general #3</a>
+            <ul class="listaResumidaConf">
+               <% @ultimos2.each do |conflicto| %>
+                  <li><a href='/conflicto/<%= conflicto.id %>'><%= conflicto.asunto %></a></li>
+               <% end %>
+            </ul>
         </p>
+      </div>
     </div>
 
     <div class="four columns">
-        <!--<h5>Map</h5>-->
-
-        <!-- Clicking this placeholder fires the mapModal Reveal modal -->
-        <p>
-            <a href="" data-reveal-id="mapModal"><img src="http://placehold.it/400x280" /></a><br />
-            <!--<a href="" data-reveal-id="mapModal">View Map</a>-->
-        </p>
-
-        <!--<p>-->
-            <!--123 Awesome St.<br />-->
-            <!--Barsoom, MA 95155-->
-        <!--</p>-->
-
-        <div class="panel">
-            <div class="row">
-                <div class="twelve columns">
-                    <a href="#" class="radius button right" data-reveal-id="buttonForModal">Registrar conflicto</a>
-                </div>
-            </div>
+      <div class="panel">
+        <div class="row">
+          <div class="twelve columns">
+            <p>Si ves un conflicto social, rep&oacutertalo, ayuda a registrar la solicitud o reclamo que hacen los ciudadanos de tu regi&oacuten, porque todas nuestras voces cuentan.</p>
+            <a href="/reportarConflicto" class="radius button right">Registrar conflicto</a>
+          </div>
         </div>
+      </div>
+      <p>
+        <a href="#" class="th"><img src="/images/america-banner.png" /></a><br />
+      </p>
+
         <div class="panel">
-            <h5>Featured</h5>
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-            <a href="#">Read More &rarr;</a>
+            <h5>Qu&eacute; es un Conflicto ?</h5>
+            <p>
+              Un conflicto social será cuando transciende lo individual y proceda de la propia estructura de la sociedad.
+            </p>
+            <a href="#">Leer Mas &rarr;</a>
         </div>
 
 
@@ -97,42 +88,20 @@
     <div class="twelve columns">
 
         <div class="panel">
-            <h4>Get in touch!</h4>
+            <!--<h4>Get in touch!</h4>-->
 
             <div class="row">
                 <div class="nine columns">
-                    <p>We'd love to hear from you, you attractive person you.</p>
+                    <!--<p>We'd love to hear from you, you attractive person you.</p>-->
                 </div>
                 <div class="three columns">
-                    <a href="#" class="radius button right">Contact Us</a>
+                    <!--<a href="#" class="radius button right">Contact Us</a>-->
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-
-
-<!-- Footer -->
-
-<footer class="row">
-    <div class="twelve columns">
-        <hr />
-        <div class="row">
-            <div class="six columns">
-                <p>&copy; Copyright no one at all. Go to town.</p>
-            </div>
-            <div class="six columns">
-                <ul class="link-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
 
 
 	<!-- Included JS Files (Uncompressed) -->
@@ -190,9 +159,5 @@
     $(window).load(function() {
         $('#slider').orbit();
     });
-    $(document).ready(function() {
-        $("#buttonForModal").click(function() {
-            $("#myModal").reveal();
-        });
-    });
+
 </script>

@@ -1,14 +1,14 @@
 10
 
 dir
-22
+75
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012/controllers
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012
 
 
 
-2012-12-01T02:17:13.715434Z
-22
+2012-12-02T07:06:12.038323Z
+64
 gareve
 
 
@@ -26,16 +26,16 @@ gareve
 
 908d4916-01d4-414b-b153-d14556803b05
 
-persistence.rb
+usuario.rb
 file
 
 
 
 
-2012-12-01T02:16:06.457901Z
-74bbbe8ed490f39c98dd0e2b40230159
-2012-12-01T02:17:13.715434Z
-22
+2012-12-01T19:40:06.694204Z
+cff511028b113d6d8e84c5f75cb3d0c1
+2012-12-01T19:49:16.073500Z
+38
 gareve
 
 
@@ -58,5 +58,73 @@ gareve
 
 
 
-2138
+499
+
+mapa.rb
+file
+
+
+
+
+2012-12-01T23:05:55.384890Z
+bd954f51e6624824fc2787e4844ac32a
+2012-12-01T23:28:29.122110Z
+48
+gareve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+418
+
+conflicto.rb
+file
+
+
+
+
+2012-12-02T06:13:03.078853Z
+234e10d9c3815915c6a0a0ffed766729
+2012-12-02T07:06:12.038323Z
+64
+gareve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+105
 

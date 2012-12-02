@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/pi-libras-del-mal-dal2012/!svn/ver/22/setup
+/svn/pi-libras-del-mal-dal2012/!svn/ver/68/setup
+END
+inputExcel.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pi-libras-del-mal-dal2012/!svn/ver/68/setup/inputExcel.rb
 END
 input.xlsx
 K 25
 svn:wc:ra_dav:version-url
 V 59
 /svn/pi-libras-del-mal-dal2012/!svn/ver/22/setup/input.xlsx
-END
-inputExcel.rb
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/pi-libras-del-mal-dal2012/!svn/ver/22/setup/inputExcel.rb
 END

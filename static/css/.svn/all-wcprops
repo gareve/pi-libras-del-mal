@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/css
+/svn/pi-libras-del-mal-dal2012/!svn/ver/74/static/css
+END
+app.css
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pi-libras-del-mal-dal2012/!svn/ver/74/static/css/app.css
 END
 leaflet.css
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/css/leaflet.css
-END
-app.css
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/css/app.css
 END

@@ -169,6 +169,27 @@ class InputExcel
          end
          row=row + 1
       end
+
+      Conflicto.each do |conflicto|
+         conflicto.links << give_me_random_link(conflicto);
+         conflicto.save
+      end
+   end
+
+   def give_me_random_link conflicto
+      vc = ['page','image']
+      periodicos = ['La Razón','Pagina Siete','Fides','Bolivia TV','El Diario']
+
+      type = vc[rand(0..1)]
+      url = 'http://2012.desarrollandoamerica.org/dal-en-bolivia/'
+
+      url = 'http://www.aporrea.org/imagenes/2007/06/estudiantes-opositores-marcha-4jun.jpg' if type == 'image'
+
+      link = Link.new(
+               :uri => url,
+               :type => type,
+               :title => 'Link del Medio "' + periodicos[rand(0..4)]+'"'
+            )
    end
 end
 

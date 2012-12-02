@@ -20,6 +20,42 @@ class Conflicto
    has n,:demandados,:constraint => :destroy!
    has n,:medidasPresion,'MedidaPresion',:constraint => :destroy!
    has n,:lugares,'Lugar',:constraint => :destroy!
+   has n,:links,:constraint => :destroy!
+
+   @tipo = nil
+   @status = nil
+
+   def self.activos
+      Conflicto.all
+   end
+
+   def getIconName
+      names = [
+         'usuarioActivoIcon','usuarioResueltoIcon','usuarioLatenteIcon',
+         'parcialActivoIcon','parcialResueltoIcon','parcialLatenteIcon',
+         'completoActivoIcon','completoResueltoIcon','completoLatenteIcon'
+      ]
+      @tipo = names[rand(0..8)] if @tipo.nil?
+
+      @tipo
+   end
+
+   def getIconName2
+      names = [
+         'terminadoIcon','progresoIcon'
+      ]
+      @status = names[rand(0..1)] if @status.nil?
+
+      @status
+   end
+
+   def getType
+      return 0 if getIconName().match(/parcial/)
+      return 1 if getIconName().match(/completo/)
+      return 2 if getIconName().match(/usuario/)
+
+      raise(getIconName())
+   end
 end
 
 class Demandante
@@ -57,6 +93,17 @@ class Lugar
    property :pais, String, :length => 100
    property :x,Float
    property :y,Float
+
+   belongs_to :conflicto
+end
+
+class Link
+   include DataMapper::Resource
+
+   property :id,Serial
+   property :uri,String, :length => 500
+   property :title,String, :length => 500
+   property :type,String,:length => 100
 
    belongs_to :conflicto
 end

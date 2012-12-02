@@ -1,14 +1,14 @@
 10
 
 dir
-22
+75
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012/sass
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012
 
 
 
-2012-11-30T10:18:45.767360Z
-20
+2012-12-02T11:26:03.899739Z
+74
 osclaug@gmail.com
 
 
@@ -26,50 +26,16 @@ osclaug@gmail.com
 
 908d4916-01d4-414b-b153-d14556803b05
 
-_settings.scss
-file
-
-
-
-
-2012-12-01T01:06:55.428316Z
-a1f8886ccc64a05a6a473d8e85f56a92
-2012-11-30T10:18:45.767360Z
-20
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6851
-
 app.scss
 file
 
 
 
 
-2012-12-01T01:06:55.428316Z
-80fa5a4d8257fd6acc46fc8106cb91ce
-2012-11-30T10:18:45.767360Z
-20
+2012-12-02T11:41:54.048694Z
+7098d627ea2ef2c98c6b32861af21305
+2012-12-02T11:26:03.899739Z
+74
 osclaug@gmail.com
 
 
@@ -92,5 +58,39 @@ osclaug@gmail.com
 
 
 
-1732
+2396
+
+_settings.scss
+file
+
+
+
+
+2012-12-01T14:33:51.210275Z
+5299335aebf7c1107ee23b39a1e53ae8
+2012-12-01T14:24:25.742348Z
+25
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6801
 

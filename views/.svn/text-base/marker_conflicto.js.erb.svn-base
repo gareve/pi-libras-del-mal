@@ -1,0 +1,52 @@
+var marker<%= conflicto.id %> = L.marker(
+                                         [<%= conflicto.lugares.first.y %>,
+                                         <%= conflicto.lugares.first.x %>],
+                                         {icon: <%= conflicto.getIconName %>}
+
+                                         );
+<% if toForm == true%>
+   marker<%= conflicto.id %>.addTo(map);
+<% else %>
+   <% if conflicto.getType == 0 %>
+      parcialAr.push(marker<%= conflicto.id %>);
+   <% elsif conflicto.getType == 1 %>
+      totalAr.push(marker<%= conflicto.id %>);
+   <% else%>
+      usuarioAr.push(marker<%= conflicto.id %>);
+   <% end %>
+<% end %>
+var popUpdata = '<div id="<%= conflicto.id %>">Este div tiene id = <%= conflicto.id %>.</div>';
+
+marker<%= conflicto.id %>.bindPopup(popUpdata);
+
+$.ajax({
+   type: 'GET',
+   url: '/<%= locale %>/conflictoMiniInfo/<%= conflicto.id %>',
+   success:function(data){
+      //console.log(data);
+      <% if toForm == true%>
+         data = "<a href='/<%= locale+'/reportarConflicto/'+conflicto.id.to_s %>'>Confirmar/Completar Conflicto</a><br/>" + data;
+      <% end %>
+      <% if highlightMarker %>
+         data = '#############' + popUpdata;
+         marker<%= conflicto.id %>.setIcon(greenIcon);
+      <% end %>
+      marker<%= conflicto.id %>.bindPopup(data);
+   },
+   error:function(){
+      console.log('Error');
+   }
+});
+
+<% if toForm == false %>
+   var markerE<%= conflicto.id %> = L.marker(
+                                         [<%= conflicto.lugares.first.y %>,
+                                         <%= conflicto.lugares.first.x %>],
+                                         {icon: <%= conflicto.getIconName2 %>}
+                                    );
+   <% if conflicto.getIconName2 == 'progresoIcon' %>
+      activoAr.push(markerE<%= conflicto.id %>);
+   <% else %>
+      terminadoAr.push(markerE<%= conflicto.id %>);
+   <% end %>
+<% end %>

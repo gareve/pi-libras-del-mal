@@ -97,9 +97,7 @@
 
 // $topBarBgColor: #222;
 // $topBarHeight: 45px;
-$topBarHeight: 30px;
 // $topBarHeightMobile: 45px;
-$topBarHeightMobile: 30px;
 // $topBarBtmMargin: 30px;
 // $topBarTitleWeight: bold;
 // $topBarTitleSize: 17px;

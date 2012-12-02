@@ -1,35 +1,71 @@
 K 25
 svn:wc:ra_dav:version-url
 V 48
-/svn/pi-libras-del-mal-dal2012/!svn/ver/22/views
+/svn/pi-libras-del-mal-dal2012/!svn/ver/75/views
 END
-layout.erb
+dal-header.erb
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/views/layout.erb
-END
-map.erb
-K 25
-svn:wc:ra_dav:version-url
-V 56
-/svn/pi-libras-del-mal-dal2012/!svn/ver/11/views/map.erb
-END
-conflicto.erb
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/pi-libras-del-mal-dal2012/!svn/ver/15/views/conflicto.erb
+V 63
+/svn/pi-libras-del-mal-dal2012/!svn/ver/40/views/dal-header.erb
 END
 home.erb
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/views/home.erb
+/svn/pi-libras-del-mal-dal2012/!svn/ver/74/views/home.erb
 END
-miniInfo.erb
+conflictoMiniInfo.erb
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/svn/pi-libras-del-mal-dal2012/!svn/ver/11/views/miniInfo.erb
+V 70
+/svn/pi-libras-del-mal-dal2012/!svn/ver/63/views/conflictoMiniInfo.erb
+END
+marker_conflicto.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/pi-libras-del-mal-dal2012/!svn/ver/60/views/marker_conflicto.js.erb
+END
+layout.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/layout.erb
+END
+map.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/pi-libras-del-mal-dal2012/!svn/ver/60/views/map.erb
+END
+estadistica.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pi-libras-del-mal-dal2012/!svn/ver/75/views/estadistica.erb
+END
+reportarConflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/pi-libras-del-mal-dal2012/!svn/ver/72/views/reportarConflicto.erb
+END
+conflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/conflicto.erb
+END
+show_conflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/show_conflicto.erb
+END
+chart.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pi-libras-del-mal-dal2012/!svn/ver/67/views/chart.erb
 END

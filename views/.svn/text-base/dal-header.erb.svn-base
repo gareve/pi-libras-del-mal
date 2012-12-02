@@ -1,0 +1,15 @@
+<!-- Header and Nav -->
+
+<div class="row">
+  <div class="three columns">
+    <h1><img src="images/logo.png" /></h1>
+  </div>
+  <div class="nine columns">
+    <ul class="nav-bar right">
+      <li><a href="estadistica#simple1">Mapa de Conflictos</a></li>
+      <li><a href="estadistica#simple2">Datos Estadisticos</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- End Header and Nav -->

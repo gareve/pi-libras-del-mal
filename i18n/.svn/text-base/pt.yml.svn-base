@@ -1,0 +1,7 @@
+conflicto:
+   asunto: Questão
+   username: Usuario es %1
+   count: !!pl
+      0: No existen usuarios
+      1: Existe 1 usuario
+      n: Existen %1 usuarios

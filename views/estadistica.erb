@@ -1,0 +1,345 @@
+<link rel="stylesheet" href="/js/jquery-ui-1.9.2.custom/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script src="/js/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+  <!-- Sidebar -->
+
+  <aside class="three columns">
+
+    <h5>Filtro de conflictos</h5>
+
+    <div class="panel">
+      <label>Pais</label>
+      <input id='paises' class="twelve" name='paises' placeholder="Bolivia" >
+      <hr/>
+      <label>Estado del Conflicto</label>
+      <input id='estados' class="twelve" name='Estado' placeholder="">
+      <hr/>
+      <label>Sector Social Demandante</label>
+      <input id='sectores' class="twelve" name='sectores' placeholder="">
+      <hr/>
+      <label>Rango de Fechas</label>
+      <div class="row">
+        <div class="six mobile-two columns">
+          <input id='fecha1' class="twelve" name='fecha1'>
+        </div>
+        <div class="six mobile-two columns">
+          <input id='fecha2' class="twelve" name='fecha2'>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+  <!-- End Sidebar -->
+
+  <!-- Main Blog Content -->
+  <div class="nine columns" role="content">
+
+    <h4>Mapa y Datos de Conflictos Sociales</h4>
+    <div class="row">
+      <div class="nine columns">
+
+      </div>
+      <div class="three columns">
+        <span onClick='cambia(-1)' class="secondary button">-</span> | <span onClick='cambia(1)' class="secondary button">+</span>
+      </div>
+    </div>
+    <dl class="tabs">
+      <dd class="active"><a href="#simple1">Mapas</a></dd>
+      <dd><a href="#simple2">Estadisticas</a></dd>
+    </dl>
+    <ul class="tabs-content">
+      <li class="active" id="simple1Tab"><%= erb(:map,:layout => false) %></li>
+      <li id="simple2Tab"><%= erb(:chart,:layout => false,:locals => {:json => 1}) %></li>      
+    </ul>
+
+  </div>
+
+  <!-- End Main Content -->
+
+
+
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+<!-- Included JS Files (Uncompressed) -->
+<script src="/js/foundation/jquery.js"></script>
+
+<script src="/js/foundation/jquery.cookie.js"></script>
+
+<script src="/js/foundation/jquery.event.move.js"></script>
+
+<script src="/js/foundation/jquery.event.swipe.js"></script>
+
+<script src="/js/foundation/jquery.foundation.accordion.js"></script>
+
+<script src="/js/foundation/jquery.foundation.alerts.js"></script>
+
+<script src="/js/foundation/jquery.foundation.buttons.js"></script>
+
+<script src="/js/foundation/jquery.foundation.clearing.js"></script>
+
+<script src="/js/foundation/jquery.foundation.forms.js"></script>
+
+<script src="/js/foundation/jquery.foundation.joyride.js"></script>
+
+<script src="/js/foundation/jquery.foundation.magellan.js"></script>
+
+<script src="/js/foundation/jquery.foundation.mediaQueryToggle.js"></script>
+
+<script src="/js/foundation/jquery.foundation.navigation.js"></script>
+
+<script src="/js/foundation/jquery.foundation.orbit.js"></script>
+
+<script src="/js/foundation/jquery.foundation.reveal.js"></script>
+
+<script src="/js/foundation/jquery.foundation.tabs.js"></script>
+
+<script src="/js/foundation/jquery.foundation.tooltips.js"></script>
+
+<script src="/js/foundation/jquery.foundation.topbar.js"></script>
+
+<script src="/js/foundation/jquery.placeholder.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function() {
+        function activateTab($tab) {
+            var $activeTab = $tab.closest('dl').find('dd.active'),
+                    contentLocation = $tab.children('a').attr("href") + 'Tab';
+
+            // Strip off the current url that IE adds
+            contentLocation = contentLocation.replace(/^.+#/, '#');
+
+            // Strip off the current url that IE adds
+            contentLocation = contentLocation.replace(/^.+#/, '#');
+
+            //Make Tab Active
+            $activeTab.removeClass('active');
+            $tab.addClass('active');
+
+            //Show Tab Content
+            $(contentLocation).closest('.tabs-content').children('li').hide();
+            $(contentLocation).css('display', 'block');
+
+            console.log();
+            isMapTab = $tab.html()[0] != '<' || $tab.html().indexOf("Mapas") != -1;
+        }
+
+        $('dl.tabs dd a').on('click.fndtn', function (event) {
+            activateTab($(this).parent('dd'));
+        });
+
+        if (window.location.hash) {
+            activateTab($('a[href="' + window.location.hash + '"]'));
+            $.foundation.customForms.appendCustomMarkup();
+        }
+    });
+</script>
+
+<script>
+   $(function() {
+        var countries = [
+            "Argentina",
+            "Bolivia",
+            "Brasil",
+            "Chile",
+            "Colombia",
+            "Costa Rica",
+            "Cuba",
+            "Ecuador",
+            "El Salvador",
+            "España",
+            "Guatemala",
+            "Honduras",
+            "México",
+            "Nicaragua",
+            "Panamá",
+            "Paraguay",
+            "Perú",
+            "Puerto Rico",
+            "República Dominicana",
+            "Uruguay",
+            "Venezuela"
+        ];
+
+
+        function split( val ) {
+            return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+
+        $("#paises")
+            // don't navigate away from the field on tab when selecting an item
+            .bind( "keydown", function( event ) {
+                if ( event.keyCode === $.ui.keyCode.TAB &&
+                        $( this ).data( "autocomplete" ).menu.active ) {
+                    event.preventDefault();
+                }
+            }).autocomplete({
+                minLength: 0,
+                source: function( request, response ) {
+                    // delegate back to autocomplete, but extract the last term
+                    response( $.ui.autocomplete.filter(
+                        countries, extractLast( request.term ) ) );
+                },
+                focus: function() {
+                    // prevent value inserted on focus
+                    return false;
+                },
+                select: function( event, ui ) {
+                    var terms = split( this.value );
+                    // remove the current input
+                    terms.pop();
+                    // add the selected item
+                    terms.push( ui.item.value );
+                    // add placeholder to get the comma-and-space at the end
+                    terms.push( "" );
+                    this.value = terms.join( ", " );
+                    return false;
+                }
+            });
+
+         $("#estados")
+            // don't navigate away from the field on tab when selecting an item
+            .bind( "keydown", function( event ) {
+                if ( event.keyCode === $.ui.keyCode.TAB &&
+                        $( this ).data( "autocomplete" ).menu.active ) {
+                    event.preventDefault();
+                }
+            }).autocomplete({
+                minLength: 0,
+                source: function( request, response ) {
+                    // delegate back to autocomplete, but extract the last term
+                    response( $.ui.autocomplete.filter(
+                        ['Activo','Finalizado'], extractLast( request.term ) ) );
+                },
+                focus: function() {
+                    // prevent value inserted on focus
+                    return false;
+                },
+                select: function( event, ui ) {
+                    var terms = split( this.value );
+                    // remove the current input
+                    terms.pop();
+                    // add the selected item
+                    terms.push( ui.item.value );
+                    // add placeholder to get the comma-and-space at the end
+                    terms.push( "" );
+                    this.value = terms.join( ", " );
+                    return false;
+                }
+            });
+
+         var availableSectores =[
+            "Agropecuario/campesino",
+            "Carcelario",
+            "Centrales obreras",
+            "Cívico",
+            "Educación",
+            "Ejecutivo departamental (empleados)",
+            "Ejecutivo municipal (empleados)",
+            "FF.AA.",
+            "Fabril",
+            "Financiero",
+            "Gobierno central",
+            "Grandes organizaciones empresariales",
+            "Gremial",
+            "Indígena",
+            "Legislativo municipal",
+            "Minero",
+            "Organizaciones políticas",
+            "Otro",
+            "Personas individuales",
+            "Salud",
+            "Servicios privados",
+            "Transporte",
+            "Vecinal/Comunal"
+         ];
+
+         $("#sectores")
+            // don't navigate away from the field on tab when selecting an item
+            .bind( "keydown", function( event ) {
+                if ( event.keyCode === $.ui.keyCode.TAB &&
+                        $( this ).data( "autocomplete" ).menu.active ) {
+                    event.preventDefault();
+                }
+            }).autocomplete({
+                minLength: 0,
+                source: function( request, response ) {
+                    // delegate back to autocomplete, but extract the last term
+                    response( $.ui.autocomplete.filter(
+                        availableSectores, extractLast( request.term ) ) );
+                },
+                focus: function() {
+                    // prevent value inserted on focus
+                    return false;
+                },
+                select: function( event, ui ) {
+                    var terms = split( this.value );
+                    // remove the current input
+                    terms.pop();
+                    // add the selected item
+                    terms.push( ui.item.value );
+                    // add placeholder to get the comma-and-space at the end
+                    terms.push( "" );
+                    this.value = terms.join( ", " );
+                    return false;
+                }
+            });
+
+            $("#fecha1").datepicker();
+            $("#fecha2").datepicker();
+    });
+</script>
+
+<script>
+   var isMapTab = true;
+   var mapIndex = 0;
+   var chartIndex = 0;
+
+   function cambia(delta){
+      if(isMapTab){
+         mapIndex++;
+
+         if(mapIndex % 2 == 1){
+            $('#map').hide();
+            $('#map2').show();
+         }else{
+            $('#map2').hide();
+            $('#map').show();
+         }
+      }else{
+          console.log('Charts');   
+          chartIndex = (((chartIndex + delta) % 4) + 4) % 4;
+          if(chartIndex == 0) {
+            $('#container1').show();
+            $('#container2').hide();
+            $('#container3').hide();
+            $('#container4').hide();            
+          }
+          if(chartIndex == 1) {
+            $('#container1').hide();
+            $('#container2').show();
+            $('#container3').hide();
+            $('#container4').hide();            
+          }
+          if(chartIndex == 2) {
+            $('#container1').hide();
+            $('#container2').hide();
+            $('#container3').show();
+            $('#container4').hide();            
+          }
+          if(chartIndex == 3) {
+            $('#container1').hide();
+            $('#container2').hide();
+            $('#container3').hide();
+            $('#container4').show();            
+          }
+      }
+   }
+</script>

@@ -1,4 +1,11 @@
-<table border=1>
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+  <!-- Main Blog Content -->
+  <div class="nine columns" role="content">
+
+    <table border=1>
 	<tr style="border: 5px;">
 	   <td>ASUNTO</td>		
 	   <td>ALCANCE</td>	   
@@ -12,8 +19,8 @@
 	   <td><%= conflicto.asunto %></td>		
 	   <td><%= conflicto.alcance %></td>	   
 	   <td><%= conflicto.salida %></td>
-	   <td><%= conflicto.demandante.inspect %></td>
-	   <td><%= conflicto.demandado.inspect %></td>
+	   <td><%= conflicto.demandantes.inspect %></td>
+	   <td><%= conflicto.demandados.inspect %></td>
 	   <td><%= conflicto.medidasPresion.inspect %></td>
 	<% end %>
 	</tr>

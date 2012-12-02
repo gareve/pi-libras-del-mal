@@ -1,0 +1,27 @@
+
+<b>ID: <%= @id %></b> <br/>
+<b><%= t.conflicto.asunto %>:</b><br/>
+<div class="infoTooltip"><%= @conflicto.asunto %></div>
+<!--<br/>-->
+<b>Demandantes:</b><br/>
+<div class="infoTooltip">
+  <% @conflicto.demandantes.each do |demandante| %>
+   + <%= demandante.actor + '/' + demandante.sector %></br>
+<% end %>
+</div>
+<!--<hr/>-->
+<b>Demandados:</b><br/>
+<div class="infoTooltip">
+  <% @conflicto.demandados.each do |demandado| %>
+   + <%= demandado.actor + '/' + demandado.sector %></br>
+<% end %>
+</div>
+<!--<hr/>-->
+<b>Lugares:</b><br/>
+<div class="infoTooltip">
+  <% @conflicto.lugares.each do |lugar| %>
++ <%= lugar.departamento + '/' + lugar.localidad %></br>
+<% end %>
+</div>
+<hr />
+<a href='/<%= sprintf('%s/conflicto/%d',locale,@conflicto.id) %>'>Mas detalles</a>

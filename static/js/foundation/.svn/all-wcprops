@@ -1,7 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation
+/svn/pi-libras-del-mal-dal2012/!svn/ver/52/static/js/foundation
+END
+jquery.foundation.mediaQueryToggle.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.mediaQueryToggle.js
 END
 jquery.foundation.tooltips.js
 K 25
@@ -25,7 +31,7 @@ jquery.foundation.orbit.js
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.orbit.js
+/svn/pi-libras-del-mal-dal2012/!svn/ver/25/static/js/foundation/jquery.foundation.orbit.js
 END
 jquery.foundation.magellan.js
 K 25
@@ -79,7 +85,7 @@ jquery.js
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.js
+/svn/pi-libras-del-mal-dal2012/!svn/ver/52/static/js/foundation/jquery.js
 END
 app.js
 K 25
@@ -99,17 +105,17 @@ svn:wc:ra_dav:version-url
 V 95
 /svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.navigation.js
 END
-jquery.foundation.accordion.js
-K 25
-svn:wc:ra_dav:version-url
-V 94
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.accordion.js
-END
 jquery.offcanvas.js
 K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.offcanvas.js
+END
+jquery.foundation.accordion.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.accordion.js
 END
 jquery.event.swipe.js
 K 25
@@ -128,10 +134,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 92
 /svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.joyride.js
-END
-jquery.foundation.mediaQueryToggle.js
-K 25
-svn:wc:ra_dav:version-url
-V 101
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/js/foundation/jquery.foundation.mediaQueryToggle.js
 END

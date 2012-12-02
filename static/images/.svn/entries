@@ -1,14 +1,14 @@
 10
 
 dir
-22
+75
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012/static/images
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012
 
 
 
-2012-11-30T10:18:45.767360Z
-20
+2012-12-02T11:26:03.899739Z
+74
 osclaug@gmail.com
 
 
@@ -25,43 +25,6 @@ osclaug@gmail.com
 
 
 908d4916-01d4-414b-b153-d14556803b05
-
-foundation
-dir
-
-slider-img-01.jpg
-file
-
-
-
-
-2012-12-01T01:06:47.808278Z
-dd966ea71b9417ff27f87dd9019d4d27
-2012-11-30T10:18:45.767360Z
-20
-osclaug@gmail.com
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-57559
 
 slider-img-02.jpg
 file
@@ -130,4 +93,112 @@ has-props
 
 
 97127
+
+build
+dir
+
+logo.png
+file
+
+
+
+
+2012-12-01T20:56:41.246062Z
+72e4b7b6ca9ad25840cc6caf3b583d6e
+2012-12-01T20:51:41.554724Z
+40
+osclaug@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+38964
+
+foundation
+dir
+
+america-banner.png
+file
+
+
+
+
+2012-12-02T11:41:53.968693Z
+ea85f4f7add909d58b6f62e04edb5c1d
+2012-12-02T11:26:03.899739Z
+74
+osclaug@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19395
+
+slider-img-01.jpg
+file
+
+
+
+
+2012-12-01T01:06:47.808278Z
+dd966ea71b9417ff27f87dd9019d4d27
+2012-11-30T10:18:45.767360Z
+20
+osclaug@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+57559
 

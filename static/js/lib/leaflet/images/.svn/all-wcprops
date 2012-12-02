@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images
+/svn/pi-libras-del-mal-dal2012/!svn/ver/54/static/js/lib/leaflet/images
 END
-zoom-out.png
+marker-icon_resuelto_usuario.png
 K 25
 svn:wc:ra_dav:version-url
-V 84
-/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/zoom-out.png
-END
-layers.png
-K 25
-svn:wc:ra_dav:version-url
-V 82
-/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/layers.png
+V 104
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_resuelto_usuario.png
 END
 marker-shadow.png
 K 25
@@ -21,15 +15,99 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/marker-shadow.png
 END
+marker-icon_activo_parcial.png
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_activo_parcial.png
+END
 marker-icon.png
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/marker-icon.png
+/svn/pi-libras-del-mal-dal2012/!svn/ver/50/static/js/lib/leaflet/images/marker-icon.png
+END
+marker-status_terminado_icon.png~
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/pi-libras-del-mal-dal2012/!svn/ver/54/static/js/lib/leaflet/images/marker-status_terminado_icon.png~
+END
+marker-status_terminado_icon.png
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/pi-libras-del-mal-dal2012/!svn/ver/54/static/js/lib/leaflet/images/marker-status_terminado_icon.png
+END
+marker-statur_activo_icon.png
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/pi-libras-del-mal-dal2012/!svn/ver/54/static/js/lib/leaflet/images/marker-statur_activo_icon.png
+END
+marker-icon_latente_parcial.png
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_latente_parcial.png
+END
+marker-icon_activo_total.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_activo_total.png
+END
+marker-icon_activo_usuario.png
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_activo_usuario.png
+END
+marker-icon_resuelto_parcial.png
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_resuelto_parcial.png
+END
+marker-icon_latente_total.png
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_latente_total.png
 END
 zoom-in.png
 K 25
 svn:wc:ra_dav:version-url
 V 83
 /svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/zoom-in.png
+END
+zoom-out.png
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/zoom-out.png
+END
+marker-icon2.png
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/pi-libras-del-mal-dal2012/!svn/ver/38/static/js/lib/leaflet/images/marker-icon2.png
+END
+marker-icon_latente_usuario.png
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_latente_usuario.png
+END
+marker-icon_resuelto_total.png
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/pi-libras-del-mal-dal2012/!svn/ver/49/static/js/lib/leaflet/images/marker-icon_resuelto_total.png
+END
+layers.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/pi-libras-del-mal-dal2012/!svn/ver/10/static/js/lib/leaflet/images/layers.png
 END

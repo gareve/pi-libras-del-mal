@@ -34,7 +34,8 @@
       captionAnimation: 'fade',         // fade, slideOpen, none
       captionAnimationSpeed: 600,       // if so how quickly should they animate in
       resetTimerOnClick: false,         // true resets the timer instead of pausing slideshow progress on manual navigation
-      bullets: false,                   // true or false to activate the bullet navigation
+//      bullets: false,                   // true or false to activate the bullet navigation
+      bullets: true,                   // true or false to activate the bullet navigation
       bulletThumbs: false,              // thumbnails for the bullets
       bulletThumbLocation: '',          // relative path to thumbnails from this file
       afterSlideChange: $.noop,         // callback to execute after slide changes
@@ -42,7 +43,8 @@
       fluid: true,
       centerBullets: true,              // center bullet nav with js, turn this off if you want to position the bullet nav manually
       singleCycle: false,               // cycles through orbit slides only once
-      slideNumber: false,               // display slide numbers?
+//      slideNumber: false,               // display slide numbers?
+      slideNumber: true,               // display slide numbers?
       stackOnSmall: false               // stack slides on small devices (i.e. phones)
     },
 
