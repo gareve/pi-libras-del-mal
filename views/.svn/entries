@@ -1,14 +1,14 @@
 10
 
 dir
-75
+105
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012/views
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012
 
 
 
-2012-12-02T11:36:26.616729Z
-75
+2012-12-02T19:07:45.732846Z
+105
 osclaug@gmail.com
 
 
@@ -26,84 +26,16 @@ osclaug@gmail.com
 
 908d4916-01d4-414b-b153-d14556803b05
 
-home.erb
-file
-
-
-
-
-2012-12-02T11:41:53.512691Z
-857a22ed431ccf6809a4c3359e2e3453
-2012-12-02T11:26:03.899739Z
-74
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5791
-
-conflictoMiniInfo.erb
-file
-
-
-
-
-2012-12-02T07:15:48.941527Z
-a77639262532d77cd47ed612072428fe
-2012-12-02T06:54:26.508421Z
-63
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-771
-
 marker_conflicto.js.erb
 file
 
 
 
 
-2012-12-02T05:02:58.250003Z
-ff15b2f7d2bcd7bc467885f1f9d7f940
-2012-12-02T05:07:28.953367Z
-60
+2012-12-02T15:27:32.507827Z
+d0a02f9d99b65cc8d644a027f165760a
+2012-12-02T16:03:48.279056Z
+96
 gareve
 
 
@@ -126,18 +58,18 @@ gareve
 
 
 
-1902
+2007
 
-layout.erb
+informacionEnviada.erb
 file
 
 
 
 
-2012-12-02T11:41:53.512691Z
-e4efd49dd37f677c879e78d984f81918
-2012-12-02T08:11:58.390473Z
-73
+2012-12-02T19:16:41.677313Z
+39aa364fbc5fb4e3889e087fd1a07e1f
+2012-12-02T19:03:23.011532Z
+104
 osclaug@gmail.com
 
 
@@ -160,7 +92,41 @@ osclaug@gmail.com
 
 
 
-2150
+226
+
+layout.erb
+file
+
+
+
+
+2012-12-02T19:16:41.677313Z
+068f637f106ab034b9f09b7066fe2a79
+2012-12-02T19:03:23.011532Z
+104
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2305
 
 map.erb
 file
@@ -202,44 +168,10 @@ file
 
 
 
-2012-12-02T11:41:53.512691Z
-e253df2c9426a541f0422472412cef07
-2012-12-02T11:36:26.616729Z
-75
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11367
-
-reportarConflicto.erb
-file
-
-
-
-
-2012-12-02T07:55:22.313296Z
-7f5926c0594b438b7c44b1a7e2d3ebb1
-2012-12-02T07:56:17.577641Z
-72
+2012-12-02T17:15:51.206096Z
+3f6318025cb7784071675741dedf2851
+2012-12-02T17:26:54.330968Z
+101
 gareve
 
 
@@ -262,7 +194,41 @@ gareve
 
 
 
-8758
+13154
+
+reportarConflicto.erb
+file
+
+
+
+
+2012-12-02T19:16:41.677313Z
+8df0382bdc284ac5925e7710c93f6aab
+2012-12-02T19:07:45.732846Z
+105
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8561
 
 conflicto.erb
 file
@@ -304,44 +270,10 @@ file
 
 
 
-2012-12-02T11:41:53.512691Z
-8d22ce1eaa96f62faeb1640329d42cfa
-2012-12-02T08:11:58.390473Z
-73
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1326
-
-chart.erb
-file
-
-
-
-
-2012-12-02T07:41:10.365071Z
-79b9fe6a3dc6856ef2fdd154b134eee3
-2012-12-02T07:26:23.455662Z
-67
+2012-12-02T15:44:01.696733Z
+1fc7c5b17ae2fb53ec6bb3a5d7c47199
+2012-12-02T14:50:50.329953Z
+89
 alvaror
 
 
@@ -364,7 +296,41 @@ alvaror
 
 
 
-4084
+1433
+
+chart.erb
+file
+
+
+
+
+2012-12-02T18:40:58.223420Z
+352b9d7302a3664001ec5450859a9edd
+2012-12-02T18:36:32.316888Z
+102
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5700
 
 dal-header.erb
 file
@@ -399,4 +365,72 @@ osclaug@gmail.com
 
 
 389
+
+home.erb
+file
+
+
+
+
+2012-12-02T11:41:53.512691Z
+857a22ed431ccf6809a4c3359e2e3453
+2012-12-02T11:26:03.899739Z
+74
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5791
+
+conflictoMiniInfo.erb
+file
+
+
+
+
+2012-12-02T13:33:13.769817Z
+0d7eb1784ea279ac9e87ba7a710c6282
+2012-12-02T13:33:19.158759Z
+85
+gareve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+948
 

@@ -17,8 +17,9 @@
 
 
       <style type="text/css">
-         #map { height: 400px; background-color: gray}
-         #map2 { height: 400px; background-color: gray}
+         #map { height: 500px;background-color: gray}
+         #map2 { height: 500px; background-color: gray}
+         #map3 { height: 500px;width: 900px; background-color: gray}
       </style>
 
       <!--[if lte IE 8]>
@@ -44,9 +45,11 @@
        <h1><img src="/images/logo.png" /></h1>
      </div>
      <div class="nine columns">
+
        <ul class="nav-bar right">
          <li><a href="/home">Inicio</a></li>
          <li><a href="/estadistica">Mapa y Datos de Conflictos</a></li>
+         <li class="importantMenu"><a href="/reportarConflicto">Reportar Conflicto</a></li>
          <!--<li><a href="estadistica#simple2">Datos Estadisticos</a></li>-->
        </ul>
      </div>
@@ -58,18 +61,13 @@
    <!-- Footer -->
    <footer class="row">
      <div class="twelve columns">
+         <br/>Lenguaje:
+         <a href='/es/reportarConflicto'><img src='/images/spain-flag.png'  <%= 'class="langselected"' if locale == "es" %> ></a>
+         <a href='/pt/reportarConflicto'><img src='/images/brazil-flag.png' <%= 'class="langselected"' if locale == "pt" %> ></a>
        <hr />
        <div class="row">
          <div class="six columns">
-           <p>&copy; Copyright no one at all. Go to town.</p>
-         </div>
-         <div class="six columns">
-           <ul class="link-list right">
-             <li><a href="#">Link 1</a></li>
-             <li><a href="#">Link 2</a></li>
-             <li><a href="#">Link 3</a></li>
-             <li><a href="#">Link 4</a></li>
-           </ul>
+           <p style="font-size: 9px;"><%= t.licencia %></p>
          </div>
        </div>
      </div>

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
-V 47
-/svn/pi-libras-del-mal-dal2012/!svn/ver/74/sass
+V 48
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/sass
 END
 _settings.scss
 K 25
@@ -12,6 +12,6 @@ END
 app.scss
 K 25
 svn:wc:ra_dav:version-url
-V 56
-/svn/pi-libras-del-mal-dal2012/!svn/ver/74/sass/app.scss
+V 57
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/sass/app.scss
 END

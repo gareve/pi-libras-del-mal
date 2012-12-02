@@ -1,7 +1,7 @@
 10
 
 dir
-75
+105
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012/config
 https://subversion.assembla.com/svn/pi-libras-del-mal-dal2012
 
@@ -25,40 +25,6 @@ has-props
 
 
 908d4916-01d4-414b-b153-d14556803b05
-
-config.rb
-file
-
-
-
-
-2012-12-01T01:06:55.424316Z
-1d92053a93670692b929f8ec81188131
-2012-11-30T10:18:45.767360Z
-20
-osclaug@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-930
 
 compass.config
 file
@@ -93,4 +59,38 @@ osclaug@gmail.com
 
 
 918
+
+config.rb
+file
+
+
+
+
+2012-12-01T01:06:55.424316Z
+1d92053a93670692b929f8ec81188131
+2012-11-30T10:18:45.767360Z
+20
+osclaug@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+930
 

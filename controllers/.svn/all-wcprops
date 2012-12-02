@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/svn/pi-libras-del-mal-dal2012/!svn/ver/64/controllers
+/svn/pi-libras-del-mal-dal2012/!svn/ver/96/controllers
 END
 usuario.rb
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/svn/pi-libras-del-mal-dal2012/!svn/ver/38/controllers/usuario.rb
+/svn/pi-libras-del-mal-dal2012/!svn/ver/96/controllers/usuario.rb
 END
 mapa.rb
 K 25
@@ -19,5 +19,5 @@ conflicto.rb
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/pi-libras-del-mal-dal2012/!svn/ver/64/controllers/conflicto.rb
+/svn/pi-libras-del-mal-dal2012/!svn/ver/91/controllers/conflicto.rb
 END

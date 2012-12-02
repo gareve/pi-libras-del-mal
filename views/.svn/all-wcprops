@@ -1,7 +1,31 @@
 K 25
 svn:wc:ra_dav:version-url
-V 48
-/svn/pi-libras-del-mal-dal2012/!svn/ver/75/views
+V 49
+/svn/pi-libras-del-mal-dal2012/!svn/ver/105/views
+END
+reportarConflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/pi-libras-del-mal-dal2012/!svn/ver/105/views/reportarConflicto.erb
+END
+conflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/conflicto.erb
+END
+show_conflicto.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/pi-libras-del-mal-dal2012/!svn/ver/89/views/show_conflicto.erb
+END
+chart.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pi-libras-del-mal-dal2012/!svn/ver/102/views/chart.erb
 END
 dal-header.erb
 K 25
@@ -19,19 +43,25 @@ conflictoMiniInfo.erb
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/pi-libras-del-mal-dal2012/!svn/ver/63/views/conflictoMiniInfo.erb
+/svn/pi-libras-del-mal-dal2012/!svn/ver/85/views/conflictoMiniInfo.erb
 END
 marker_conflicto.js.erb
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/pi-libras-del-mal-dal2012/!svn/ver/60/views/marker_conflicto.js.erb
+/svn/pi-libras-del-mal-dal2012/!svn/ver/96/views/marker_conflicto.js.erb
+END
+informacionEnviada.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/views/informacionEnviada.erb
 END
 layout.erb
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/layout.erb
+V 60
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/views/layout.erb
 END
 map.erb
 K 25
@@ -42,30 +72,6 @@ END
 estadistica.erb
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/svn/pi-libras-del-mal-dal2012/!svn/ver/75/views/estadistica.erb
-END
-reportarConflicto.erb
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/pi-libras-del-mal-dal2012/!svn/ver/72/views/reportarConflicto.erb
-END
-conflicto.erb
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/conflicto.erb
-END
-show_conflicto.erb
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/pi-libras-del-mal-dal2012/!svn/ver/73/views/show_conflicto.erb
-END
-chart.erb
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/pi-libras-del-mal-dal2012/!svn/ver/67/views/chart.erb
+V 65
+/svn/pi-libras-del-mal-dal2012/!svn/ver/101/views/estadistica.erb
 END

@@ -191,5 +191,84 @@ class InputExcel
                :title => 'Link del Medio "' + periodicos[rand(0..4)]+'"'
             )
    end
+
+   def add_other_countries
+      conflicto = Conflicto.new(
+                  :asunto => 'Asunto',
+                  :resumen => 'Resumen',
+                  :resumen => 'Alcance',
+                  :salida => 'Salida',
+                  :reportado => 'Reportado'
+                  )
+      conflicto.save
+
+      demandante = Demandante.new(
+                     :actor => 'Actor',
+                     :sector => 'Sector'
+                  )
+      demandado = Demandado.new(
+                     :actor => 'Actor',
+                     :sector => 'Sector'
+                  )
+      medidaPresion = MedidaPresion.new(
+                        :fecha => Time.now,
+                        :tipo => 'Tipo',
+                        :nivel => 'Nivel'
+                     )
+
+      lugar = Lugar.new(
+                        :localidad => 'Localidad',
+                        :provincia => 'Provincia',
+                        :departamento => 'Departamento',
+                        :pais => 'Brasil',
+                        :x => -58.930664,
+                        :y => -11.22151
+                     )
+      conflicto.demandantes << demandado
+      conflicto.demandados << demandado
+      conflicto.medidasPresion << medidaPresion
+      conflicto.lugares << lugar
+
+      conflicto.save
+
+
+      conflicto = Conflicto.new(
+                  :asunto => 'Asunto',
+                  :resumen => 'Resumen',
+                  :resumen => 'Alcance',
+                  :salida => 'Salida',
+                  :reportado => 'Reportado'
+                  )
+      conflicto.save
+
+      demandante = Demandante.new(
+                     :actor => 'Actor',
+                     :sector => 'Sector'
+                  )
+      demandado = Demandado.new(
+                     :actor => 'Actor',
+                     :sector => 'Sector'
+                  )
+      medidaPresion = MedidaPresion.new(
+                        :fecha => Time.now,
+                        :tipo => 'Tipo',
+                        :nivel => 'Nivel'
+                     )
+
+      lugar = Lugar.new(
+                        :localidad => 'Localidad',
+                        :provincia => 'Provincia',
+                        :departamento => 'Departamento',
+                        :pais => 'Peru',
+                        :x => -71.542969,
+                        :y => -16.341226
+                     )
+      conflicto.demandantes << demandado
+      conflicto.demandados << demandado
+      conflicto.medidasPresion << medidaPresion
+      conflicto.lugares << lugar
+
+      conflicto.save
+   end
 end
 

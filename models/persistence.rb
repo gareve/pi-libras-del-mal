@@ -7,8 +7,24 @@ DataMapper::Logger.new($stdout, :debug)
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/sqlite.db")
 
+module AutoJSON
+  def auto_j
+    h = {}
+    instance_variables.each do |e|
+      o = instance_variable_get e.to_sym
+      h[e[1..-1]] = (o.respond_to? :auto_j) ? o.auto_j : o;
+    end
+    h
+  end
+  def to_json *a
+    auto_j.to_json *a
+  end
+end
+
 class Conflicto
    include DataMapper::Resource
+   include AutoJSON
+
    property :id, Serial
    property :asunto, String, :length => 100
    property :resumen, String, :length => 100
@@ -128,6 +144,5 @@ def populate_db
    p "*******************************"
    inputExcel = InputExcel.new
    inputExcel.chargeFile
-
+   inputExcel.add_other_countries
 end
-

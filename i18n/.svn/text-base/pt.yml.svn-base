@@ -1,7 +1,21 @@
 conflicto:
    asunto: Questão
-   username: Usuario es %1
+   demandante: Requerente
+   demandado: Requerido
+   medidasDePresion: Medidas de Pressão
+   alcance: Escopo
+   descripcion: Descrição
+   mandar: Enviar informação
+   reporteDeConflicto: Relatório do Conflito
+   tuInformacionAyuda: Sua informação ajuda
+   conTuAyuda: "Com a sua ajuda, podemos chegar a ter dados muito importantes sobre o número de conflitos e saber por que eles formaram, obrigado."
+   paso: Passo %1
+   deseaCrear: ¿Deseja denunciar um conflito nesta posição?
+   ayuda: "Selecione um conflito para atualizar as informações ou selecionar um ponto no mapa para relatar um novo conflito"
+
    count: !!pl
       0: No existen usuarios
       1: Existe 1 usuario
       n: Existen %1 usuarios
+licencia: "Software distribuido bajo la licencia MIT.<br/>Copyright 2012 Oscar Laura, Gabriel Rea y Alvaro Rojas.<br/>Desarrollado en la Hackaton DAL Latinoamerica 2012"
+gracias: "Muito obrigado por fornecer informações valiosas. As informações fornecidas serão revistos e aprovados por nossos moderadores."

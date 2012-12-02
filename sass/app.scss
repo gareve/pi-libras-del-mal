@@ -90,3 +90,36 @@ h4, h3, h2{font-weight: normal;}
     margin-bottom: 1px solid #2BA6CB !important;
   }
 }
+
+.dataTableResult{
+  th {font-size: 12px;}
+  td {font-size: 11px;}
+}
+
+.importantMenu{
+  a:link, a:visited{
+    // needs latest Compass, add '@import "compass"' to your scss
+    background-color: #31b20e; // Old browsers
+    @include filter-gradient(#31b20e, #175406, vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #31b20e 0%,#175406 100%));
+
+  }
+  a:hover{
+    // needs latest Compass, add '@import "compass"' to your scss
+    background-color: #175406; // Old browsers
+    @include filter-gradient(#175406, #31b20e, vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #175406 0%,#31b20e 100%));
+  }
+}
+
+footer{
+  a:link, a:selected, a:hover{
+    img.langselected{
+      border: 2px solid #ffff00 !important;
+    }
+  }
+}

@@ -1,76 +1,10 @@
+<link rel="stylesheet" href="/js/jquery-ui-1.9.2.custom/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script src="/js/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
 
 <!-- Main Page Content and Sidebar -->
 
   <div class="row">
-
-    <!-- Contact Details -->
-    <div class="nine columns">
-
-      <h3>Tu informaci&oacute;n ayuda</h3>
-      <p>Con tu ayuda podremos llegar a tener un dato muy importante en cuanto a la cantidad de conflictos y saber el porque van formandose, <em>gracias</em>.</p>
-
-      <dl class="contained tabs">
-        <dd class="active"><a href="#contactForm">Reporte de Conflicto</a></dd>
-        <!-- <dd><a href="#contactPeople">Specific Person</a></dd> -->
-      </dl>
-      <form id='formulary' action='/reportarConflicto/adicionar'>
-         <ul class="tabs-content contained">
-           <li id="contactFormTab" class="active">
-             <div class="row collapse">
-               <div class="two columns"><label class="inline">Asunto*</label></div>
-               <div class="ten columns"><input type="text" id="asunto" name='asunto'
-                  value = '<%= @asunto %>'
-                  placeholder="" />
-             </div>
-             <div class="row collapse">
-               <div class="two columns"><label class="inline">Demandante*</label></div>
-               <div class="ten columns"><input type="text" id="demandante" name = 'demandante'
-                  value = '<%= @demandantes %>'
-                  placeholder="" />
-             </div>
-             <div class="row collapse">
-               <div class="two columns"><label class="inline">Demandado*</label></div>
-               <div class="ten columns"><input type="text" id="demandado" name='demandado'
-                  value = '<%= @demandados %>'
-                  placeholder="" />
-             </div>
-             <div class="row collapse">
-               <div class="two columns"><label class="inline">Medidas*</label></div>
-               <a href="#" class="button" id='btnMedidaPresion'>+Adicionar Medida de Presion</a>
-               <input type='hidden' name='x1' id='x1' value='-67.8630186710162'>
-               <input type='hidden' name='y1' id='y1' value='-16.1060054460261'>
-               <div id='map'></div>
-             </div>
-             <div class="row collapse">
-               <div class="two columns"><label class="inline">Alcance</label></div>
-               <div class="ten columns"><input type="text" id="alcance" name='alcance'
-                  value = '<%= @alcance %>'
-                  placeholder="" />
-             </div>
-
-             <label>Descripci&oacute;n del Conflicto</label>
-             <textarea rows="4" id='resumen' name='resumen'
-               value = '<%= @resumen %>'
-             ></textarea>
-
-             <input type="submit" class="radius button" />
-           </li>
-
-         </ul>
-      </form>
-
-    </div>
-
-    <div id="myModal" class="reveal-modal [expand, xlarge, large, medium, small]">
-      <h2>Awesome. I have it.</h2>
-      <p class="lead">Your couch.  It is mine.</p>
-      <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>
-    <!-- End Contact Details -->
-
-
-    <!-- Sidebar -->
+   <!-- Sidebar -->
 
     <div class="three columns">
 
@@ -78,10 +12,59 @@
 
       <!-- Clicking this placeholder fires the mapModal Reveal modal -->
       <p>
-        <a href="#"><img src="http://placehold.it/400x280" /></a><br />
+        <a href="https://wwww.facebook.com"><img src="/images/login_facebook.jpg" /></a><br />
       </p>
 
     </div>
+
+    <!-- Contact Details -->
+    <h3><%= t.conflicto.tuInformacionAyuda %></h3>
+      <p><%= t.conflicto.conTuAyuda %></p>
+
+    <div class="twelve columns">
+    <div id="accordion">
+         <h3><%= t.conflicto.paso(1) %></h3>
+         <div >
+            <%= t.conflicto.ayuda %>
+            <div id='map3'></div>
+         </div>
+         <h3 id='ac2' ><%= t.conflicto.paso(2) %></h3>
+         <div>
+            <p>
+               <%= t.conflicto.reporteDeConflicto %>
+
+               <%= t.conflicto.asunto %>*
+               <input type="text" id="asunto" name='asunto' value = '<%= @asunto %>'/>
+
+               <%= t.conflicto.demandante %>*
+               <input type="text" id="demandante" name = 'demandante' value = '<%= @demandantes %>' />
+
+             <%= t.conflicto.demandado %>*
+               <input type="text" id="demandado" name='demandado'
+                  value = '<%= @demandados %>' />
+
+             <%= t.conflicto.medidasDePresion %>* <input type="text" id="demandado" name='demandado' value = '<%= @medidaPresion %>' />
+
+
+               <%= t.conflicto.alcance %>
+               <input type="text" id="alcance" name='alcance' value = '<%= @alcance %>' />
+
+             <%= t.conflicto.descripcion %>
+             <textarea rows="4" id='resumen' name='resumen' value = '<%= @resumen %>' >
+             </textarea>
+
+             <a href='/<%= locale %>/reporte/enviado'><input class="button" type='submit' value='<%= t.conflicto.mandar%>'></a>
+            </p>
+         </div>
+      </div>
+    </div>
+    <!--<div id="myModal" class="reveal-modal [expand, xlarge, large, medium, small]">-->
+      <!--<h2>Awesome. I have it.</h2>-->
+      <!--<p class="lead">Your couch.  It is mine.</p>-->
+      <!--<p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>-->
+      <!--<a class="close-reveal-modal">&#215;</a>-->
+    <!--</div>-->
+    <!-- End Contact Details -->
 
     <!-- End Sidebar -->
   </div>
@@ -101,6 +84,8 @@
 
 <script>
 var map;
+var markerUser;
+
 function llenaFormulario(x,y,asunto,resumen,alcance,salida,id){
    $('#x1').val(x);
    $('#y1').val(y);
@@ -109,19 +94,18 @@ function llenaFormulario(x,y,asunto,resumen,alcance,salida,id){
 }
 function onMapClick(e) {
    //alert("You clicked the map at " + e.latlng);
+   /*
    var popup = L.popup()
       .setLatLng(e.latlng)
       .setContent(sprintf("<a onclick='llenaFormulario(%.5f,%.5f)' src='#' >Reportar nuevo conflicto</a>",e.latlng.lat,e.latlng.lng))
       .openOn(map);
+   */
+   markerUser.setLatLng(e.latlng);
+   markerUser.bindPopup('<a href=/<%= locale+"/reportarConflicto?" %>x='+e.latlng.lat+'&y='+e.latlng.lng +'><%= t.conflicto.deseaCrear%></a>').openPopup();
 }
+
 $(document).ready(function() {
-   $('#map').hide();
-
-   $('#btnMedidaPresion').click(function(){
-      $('#map').show();
-
-
-      var usuarioResueltoIcon = new L.Icon({
+   var usuarioResueltoIcon = new L.Icon({
       iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_parcial.png',
       shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
    });
@@ -172,7 +156,7 @@ $(document).ready(function() {
 
    var normalIcon = new L.Icon();
 
-      map = L.map('map').setView([-16.49831, -68.1451], 6);
+      map = L.map('map3').setView([-16.49831, -68.1451], 6);
       L.tileLayer('http://{s}.tile.cloudmade.com/{APIKEY}/997/256/{z}/{x}/{y}.png', {
          APIKEY: '5a27ed92198543449be5cb9a79e7e829',
          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
@@ -180,9 +164,20 @@ $(document).ready(function() {
       }).addTo(map);
       map.on('click', onMapClick);
 
-      var greenIcon = new L.Icon({
-         iconUrl: '/js/lib/leaflet/images/marker-icon2.png'
+      var updateIcon = new L.Icon({
+         iconUrl: '/js/lib/leaflet/images/marker-update-icon.png',
+         shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
       });
+      var insertIcon = new L.Icon({
+         iconUrl: '/js/lib/leaflet/images/marker-add-icon.png',
+         shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+      });
+
+      markerUser = L.marker(
+                  [0.0,0.0],
+                  {icon: insertIcon}
+               );
+      markerUser.addTo(map);
 
       <% Conflicto.activos.each do |conflicto|%>
          <%=
@@ -201,8 +196,14 @@ $(document).ready(function() {
             end
          %>
       <% end %>
-   });
+      <% if @conflictoSeleccionado.nil? == false or @x.nil? == false %>
+         $('#ac2').click();
+      <% end %>
 });
+</script>
+
+<script>
+   $( "#accordion" ).accordion();
 </script>
 <!-- Included JS Files (Uncompressed) -->
 <script src="/js/foundation/jquery.js"></script>

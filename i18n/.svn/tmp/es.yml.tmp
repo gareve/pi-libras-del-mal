@@ -1,0 +1,20 @@
+conflicto:
+   asunto: Asunto
+   demandante: Demandante
+   demandado: Demandado
+   medidasDePresion: Medidas de Presión
+   alcance: Alcance
+   descripcion: Descripción
+   mandar: Enviar información
+   reporteDeConflicto: Reporte de Conflicto
+   tuInformacionAyuda: Tu información ayuda
+   conTuAyuda: "Con tu ayuda podremos llegar a tener un dato muy importante en cuanto a la cantidad de conflictos y saber el porque van formandose, gracias."
+   paso: Paso %1
+   deseaCrear: ¿Desea reportar un conflicto en esta posición? (Haga click!)
+   ayuda: "Seleccione un conflicto para actualizar la información o seleccione un punto en el mapa para reportar un nuevo conflicto"
+
+   count: !!pl
+      0: No existen usuarios
+      1: Existe 1 usuario
+      n: Existen %1 usuarios
+licencia: "Software distribuido bajo la licencia MIT.<br/>Copyright 2012 Oscar Laura, Gabriel Rea y Alvaro Rojas.<br/>Desarrollado en la Hackaton DAL Latinoamerica 2012"

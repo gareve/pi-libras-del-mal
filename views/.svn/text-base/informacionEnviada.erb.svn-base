@@ -1,0 +1,16 @@
+
+<div class=row>
+  <div class="twelve columns">
+    <h4>Reportar Conflicto - Paso final</h4>
+    <p></p>
+    <p></p>
+   <p>
+      <!--<h3>-->
+<%= t.gracias %>
+      <!--</h3>-->
+   </p>
+    <p></p>
+    <p></p>
+
+  </div>
+</div>

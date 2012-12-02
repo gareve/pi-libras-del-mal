@@ -1,0 +1,21 @@
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+  <!-- Main Blog Content -->
+  <div class="nine columns" role="content">
+
+    <article>
+
+      <h3><%= @conflicto.asunto %></h3>
+      <h6>Reportado por <a href="#">Juan Perez</a> en Agosto 12, 2012.</h6>
+
+<br/>Links adicionales:<br/><br/>
+<% @conflicto.links.each do |link| %>
+<% if link.type == 'image' %>
++ <img src='<%= link.uri%>' alt='<%= link.title%>' />
+<% else %>
++ <a href='<%= link.uri%>'><%= link.title%></a>
+<% end %>
+
+<% end %>

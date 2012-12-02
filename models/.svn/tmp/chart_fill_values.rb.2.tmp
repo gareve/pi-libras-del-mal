@@ -1,0 +1,69 @@
+
+  def load_charts_value
+    @lugar = Lugar.all
+    #cobertura json1
+
+    dpto = []
+    @lugar.each do |lugar|
+      dpto << lugar.departamento
+    end
+    dpto.uniq!
+    @json1 = Hash.new
+    @json1["categories"] = dpto
+    @type = "column"
+
+    @series1 = [
+      {"name" => "Usuario", "data" =>      [1,2,3,3,3,3,1,0,1]},
+      {"name" => "Parcial", "data" =>  [3,1,1,1,1,1,2,4,2]},
+      {"name" => "Total", "data" =>     [2,3,2,2,2,2,1,1,5]}
+    ]
+    
+    #Pais
+    paises = []
+    @lugar.each do |lugar|
+      paises << lugar.pais
+    end
+    paises.uniq!
+    @json2 = Hash.new
+    @json2["categories"] = paises
+    @type = "column"
+    @series2 = [
+<<<<<<< .mine
+        {"name" => "Usuario", "data" =>      [1]},
+=======
+      {"name" => "Usuario", "data" =>      [1]}, 
+>>>>>>> .r57
+      {"name" => "Parcial", "data" =>  [3]},
+      {"name" => "Total", "data" =>     [2]}
+    ]
+    
+    #Area
+    @demandante = Demandante.all
+    demandantes = []
+    @demandante.each do |dmt|
+      demandantes << dmt.sector
+    end
+    demandantes.uniq!
+    @json3 = Hash.new
+    @json3["categories"] = demandantes
+    @series3 = [
+      {"name" => "Usuario", "data" =>      [1,2,3,3,3,3,1,0,1]},
+      {"name" => "Parcial", "data" =>  [3,1,1,1,1,1,2,4,2]},
+      {"name" => "Total", "data" =>     [2,3,2,2,2,2,1,1,5]}
+    ]
+
+    #Estado
+    @conflictos = Conflicto.all
+    salidas = []
+    @conflictos.each do |conflicto|
+      salidas << conflicto.salida
+    end
+    salidas.uniq!
+    @json4 = Hash.new
+    @json4["categories"] = dpto
+    @series4 = [
+      {"name" => "Usuario", "data" =>      [1,2,3,3,3,3,1,0,1]}, 
+      {"name" => "Parcial", "data" =>  [3,1,1,1,1,1,2,4,2]},
+      {"name" => "Total", "data" =>     [2,3,2,2,2,2,1,1,5]}
+    ]
+  end

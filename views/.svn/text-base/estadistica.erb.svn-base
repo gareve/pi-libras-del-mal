@@ -29,6 +29,9 @@
           <input id='fecha2' class="twelve" name='fecha2'>
         </div>
       </div>
+      <p><br/>
+         <a href='#' class='radius button'>Buscar</a>
+      </p>
     </div>
 
   </aside>
@@ -39,11 +42,11 @@
 
     <h4>Mapa y Datos de Conflictos Sociales</h4>
     <div class="row">
-      <div class="nine columns">
-
-      </div>
-      <div class="three columns">
-        <span onClick='cambia(-1)' class="secondary button">-</span> | <span onClick='cambia(1)' class="secondary button">+</span>
+      <div class="nine columns "></div>
+      <div class="three  mobile-four columns" style="text-align: right; white-space: nowrap;">
+        <span style="width: 30px; display: inline;" onClick='cambia(-1)' class="secondary button small round has-tip" data-width="210" title="Bottom and the default position.">&larr;</span>
+        |
+        <span style="width: 30px; display: inline;" onClick='cambia(1)' class="secondary button small round has-tip" data-width="210" title="Bottom and the default position.">&rarr;</span>
       </div>
     </div>
     <dl class="tabs">
@@ -51,8 +54,20 @@
       <dd><a href="#simple2">Estadisticas</a></dd>
     </dl>
     <ul class="tabs-content">
-      <li class="active" id="simple1Tab"><%= erb(:map,:layout => false) %></li>
-      <li id="simple2Tab"><%= erb(:chart,:layout => false,:locals => {:json => 1}) %></li>      
+      <li class="active" id="simple1Tab">
+        <%= erb(:map,:layout => false) %>
+        <div class="panel twelve" style="padding: 3px 5px;">
+          <center><h6>Mapa de cobertura de medios de Comunicación</h6></center>
+          <img src="/js/lib/leaflet/images/marker-icon_resuelto_total.png"> Conflicto cubierto totalmente por un medio de comunicación</img><br>
+          <img src="/js/lib/leaflet/images/marker-icon_resuelto_parcial.png"> Conflicto cubierto parcialmente por un medio de comunicación</img><br>
+          <img src="/js/lib/leaflet/images/marker-icon_resuelto_usuario.png"> Conflicto cubierto por un usuario</img><br>
+          <hr>
+          <img src="/js/lib/leaflet/images/marker-statur_activo_icon.png"> Conflicto Activo</img><br>
+          <img src="/js/lib/leaflet/images/marker-status_latente_icon.png">Conflicto Latente</img><br>
+          <img src="/js/lib/leaflet/images/marker-status_terminado_icon.png">Conflicto Resuelto</img><br>
+        </div>
+      </li>
+      <li id="simple2Tab"><%= erb(:chart,:layout => false,:locals => {:json => 1}) %></li>
     </ul>
 
   </div>
@@ -314,31 +329,54 @@
             $('#map').show();
          }
       }else{
-          console.log('Charts');   
+          console.log('Charts');
           chartIndex = (((chartIndex + delta) % 4) + 4) % 4;
           if(chartIndex == 0) {
             $('#container1').show();
             $('#container2').hide();
             $('#container3').hide();
-            $('#container4').hide();            
+            $('#container4').hide();
+
+            $('#table1').show();
+            $('#table2').hide();
+            $('#table3').hide();
+            $('#table4').hide();
+
           }
           if(chartIndex == 1) {
             $('#container1').hide();
             $('#container2').show();
             $('#container3').hide();
-            $('#container4').hide();            
+            $('#container4').hide();
+
+            $('#table1').hide();
+            $('#table2').show();
+            $('#table3').hide();
+            $('#table4').hide();
+
           }
           if(chartIndex == 2) {
             $('#container1').hide();
             $('#container2').hide();
             $('#container3').show();
-            $('#container4').hide();            
+            $('#container4').hide();
+
+            $('#table1').hide();
+            $('#table2').hide();
+            $('#table3').show();
+            $('#table4').hide();
+
           }
           if(chartIndex == 3) {
             $('#container1').hide();
             $('#container2').hide();
             $('#container3').hide();
-            $('#container4').show();            
+            $('#container4').show();
+
+            $('#table1').hide();
+            $('#table2').hide();
+            $('#table3').hide();
+            $('#table4').show();
           }
       }
    }

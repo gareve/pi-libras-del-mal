@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
-V 56
-/svn/pi-libras-del-mal-dal2012/!svn/ver/74/static/images
+V 57
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/static/images
 END
-slider-img-03.jpg
+spain-flag.png
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/images/slider-img-03.jpg
-END
-logo.png
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/svn/pi-libras-del-mal-dal2012/!svn/ver/40/static/images/logo.png
+V 72
+/svn/pi-libras-del-mal-dal2012/!svn/ver/104/static/images/spain-flag.png
 END
 america-banner.png
 K 25
@@ -24,12 +18,36 @@ END
 slider-img-01.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/images/slider-img-01.jpg
+V 75
+/svn/pi-libras-del-mal-dal2012/!svn/ver/102/static/images/slider-img-01.jpg
 END
 slider-img-02.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/pi-libras-del-mal-dal2012/!svn/ver/20/static/images/slider-img-02.jpg
+V 75
+/svn/pi-libras-del-mal-dal2012/!svn/ver/102/static/images/slider-img-02.jpg
+END
+slider-img-03.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/pi-libras-del-mal-dal2012/!svn/ver/102/static/images/slider-img-03.jpg
+END
+brazil-flag.png
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/pi-libras-del-mal-dal2012/!svn/ver/100/static/images/brazil-flag.png
+END
+login_facebook.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/pi-libras-del-mal-dal2012/!svn/ver/88/static/images/login_facebook.jpg
+END
+logo.png
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pi-libras-del-mal-dal2012/!svn/ver/40/static/images/logo.png
 END

@@ -1,0 +1,242 @@
+
+<!-- Main Page Content and Sidebar -->
+
+  <div class="row">
+
+    <!-- Contact Details -->
+    <div class="nine columns">
+
+      <h3><%= t.conflicto.tuInformacionAyuda %></h3>
+      <p><%= t.conflicto.conTuAyuda %></p>
+
+      <dl class="contained tabs">
+        <dd class="active"><a href="#contactForm"><%= t.conflicto.reporteDeConflicto %></a></dd>
+        <!-- <dd><a href="#contactPeople">Specific Person</a></dd> -->
+      </dl>
+      <form id='formulary' action='/reportarConflicto/adicionar'>
+         <ul class="tabs-content contained">
+           <li id="contactFormTab" class="active">
+             <div class="row collapse">
+               <div class="two columns"><label class="inline"><%= t.conflicto.asunto %>*</label></div>
+               <div class="ten columns"><input type="text" id="asunto" name='asunto'
+                  value = '<%= @asunto %>'
+                  placeholder="" />
+             </div>
+             <div class="row collapse">
+               <div class="two columns"><label class="inline"><%= t.conflicto.demandante %>*</label></div>
+               <div class="ten columns"><input type="text" id="demandante" name = 'demandante'
+                  value = '<%= @demandantes %>'
+                  placeholder="" />
+             </div>
+             <div class="row collapse">
+               <div class="two columns"><label class="inline"><%= t.conflicto.demandado %>*</label></div>
+               <div class="ten columns"><input type="text" id="demandado" name='demandado'
+                  value = '<%= @demandados %>'
+                  placeholder="" />
+             </div>
+             <div class="row collapse">
+               <div class="two columns"><label class="inline"><%= t.conflicto.medidasDePresion %>*</label></div>
+               <a href="#" class="button" id='btnMedidaPresion'>+Adicionar Medida de Presion</a>
+               <input type='hidden' name='x1' id='x1' value='-67.8630186710162'>
+               <input type='hidden' name='y1' id='y1' value='-16.1060054460261'>
+               <div id='map'></div>
+             </div>
+             <div class="row collapse">
+               <div class="two columns"><label class="inline"><%= t.conflicto.alcance %></label></div>
+               <div class="ten columns"><input type="text" id="alcance" name='alcance'
+                  value = '<%= @alcance %>'
+                  placeholder="" />
+             </div>
+
+             <label><%= t.conflicto.descripcion %></label>
+             <textarea rows="4" id='resumen' name='resumen' value = '<%= @resumen %>' ></textarea>
+
+             <input type="submit" class="radius button" value="Reportar" />
+           </li>
+         </ul>
+      </form>
+
+    </div>
+
+    <div id="myModal" class="reveal-modal [expand, xlarge, large, medium, small]">
+      <h2>Awesome. I have it.</h2>
+      <p class="lead">Your couch.  It is mine.</p>
+      <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+    <!-- End Contact Details -->
+
+
+    <!-- Sidebar -->
+
+    <div class="three columns">
+
+      <!-- <h5>Map</h5> -->
+
+      <!-- Clicking this placeholder fires the mapModal Reveal modal -->
+      <p>
+        <a href="https://wwww.facebook.com"><img src="images/login_facebook.jpg" /></a><br />
+      </p>
+
+    </div>
+
+    <!-- End Sidebar -->
+  </div>
+
+  <!-- End Main Content and Sidebar -->
+
+<!-- Map Modal -->
+
+<div class="reveal-modal" id="mapModal" style='height:500;width:800'>
+
+</div>
+
+<!-- End Modal -->
+
+<script src="/js/lib/leaflet/leaflet.js"></script>
+<link rel="stylesheet" href="/js/lib/leaflet/leaflet.css" />
+
+<script>
+var map;
+function llenaFormulario(x,y,asunto,resumen,alcance,salida,id){
+   $('#x1').val(x);
+   $('#y1').val(y);
+   console.log(x);
+   console.log(y);
+}
+function onMapClick(e) {
+   //alert("You clicked the map at " + e.latlng);
+   var popup = L.popup()
+      .setLatLng(e.latlng)
+      .setContent(sprintf("<a onclick='llenaFormulario(%.5f,%.5f)' src='#' >Reportar nuevo conflicto</a>",e.latlng.lat,e.latlng.lng))
+      .openOn(map);
+}
+
+        $(window).load(function() {
+            $('#slider').accordion();
+        });
+
+
+$(document).ready(function() {
+   $('#map').hide();
+
+   $('#btnMedidaPresion').click(function(){
+      $('#map').show();
+
+
+      var usuarioResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var usuarioLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_usuario.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var usuarioActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_usuario.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var parcialResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var parcialLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var parcialActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_parcial.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var completoResueltoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_resuelto_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var completoLatenteIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_latente_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+   var completoActivoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-icon_activo_total.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var terminadoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-statur_activo_icon.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var progresoIcon = new L.Icon({
+      iconUrl: '/js/lib/leaflet/images/marker-status_terminado_icon.png',
+      shadowUrl: '/js/lib/leaflet/images/marker-shadow.png'
+   });
+
+   var normalIcon = new L.Icon();
+
+      map = L.map('map').setView([-16.49831, -68.1451], 6);
+      L.tileLayer('http://{s}.tile.cloudmade.com/{APIKEY}/997/256/{z}/{x}/{y}.png', {
+         APIKEY: '5a27ed92198543449be5cb9a79e7e829',
+         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+         maxZoom: 18
+      }).addTo(map);
+      map.on('click', onMapClick);
+
+      var greenIcon = new L.Icon({
+         iconUrl: '/js/lib/leaflet/images/marker-icon2.png'
+      });
+
+      <% Conflicto.activos.each do |conflicto|%>
+         <%=
+            unless conflicto.lugares.first.x.nil?
+               erb(:'marker_conflicto.js',
+                   :layout => false,
+                   :locals => {
+                        :conflicto => conflicto,
+                        :toForm => true,
+                        :highlightMarker => (
+                                             @conflictoSeleccionado.nil? == false and
+                                             conflicto.id == @conflictoSeleccionado.id
+                                          )
+                        }
+                  )
+            end
+         %>
+      <% end %>
+   });
+});
+</script>
+<!-- Included JS Files (Uncompressed) -->
+<script src="/js/foundation/jquery.js"></script>
+
+<script src="/js/foundation/jquery.event.move.js"></script>
+
+<script src="/js/foundation/jquery.event.swipe.js"></script>
+
+<script src="/js/foundation/jquery.foundation.accordion.js"></script>
+
+<script src="/js/foundation/jquery.foundation.alerts.js"></script>
+
+<script src="/js/foundation/jquery.foundation.buttons.js"></script>
+
+<script src="/js/foundation/jquery.foundation.clearing.js"></script>
+
+<script src="/js/foundation/jquery.foundation.forms.js"></script>
+
+<script src="/js/foundation/jquery.foundation.joyride.js"></script>
+
+<script src="/js/foundation/jquery.foundation.magellan.js"></script>
+
+<script src="/js/foundation/jquery.foundation.mediaQueryToggle.js"></script>
+
+<script src="/js/foundation/jquery.foundation.navigation.js"></script>
+
+<script src="/js/foundation/jquery.foundation.orbit.js"></script>
+
+<script src="/js/foundation/jquery.foundation.reveal.js"></script>
+<script src="/js/foundation/jquery.foundation.tabs.js"></script>
+<script src="/js/foundation/jquery.foundation.tooltips.js"></script>
+<script src="/js/foundation/jquery.foundation.topbar.js"></script>
+
+<script src="/js/foundation/jquery.placeholder.js"></script>

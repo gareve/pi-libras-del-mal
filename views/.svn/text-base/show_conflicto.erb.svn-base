@@ -3,8 +3,10 @@
 <div class="row">
 
   <!-- Main Blog Content -->
+  <h5 style="margin-right:5%;"><a href="/estadistica" class="radius button right">Volver</a></h5>
   <div class="nine columns" role="content">
-
+    
+    
     <article>
 
       <h3><%= @conflicto.asunto %></h3>

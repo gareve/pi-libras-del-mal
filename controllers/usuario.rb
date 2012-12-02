@@ -1,4 +1,7 @@
 get '/reportarConflicto' do
+   @x = params[:x]
+   @y = params[:y]
+
    erb :reportarConflicto
 end
 
@@ -11,9 +14,15 @@ get '/reportarConflicto/:id' do
    @demandantes = @conflictoSeleccionado.demandantes.first.actor
    @demandados = @conflictoSeleccionado.demandados.first.actor
 
+   @medidaPresion = @conflictoSeleccionado.medidasPresion.first.tipo
+
    erb :reportarConflicto
 end
 
 get '/reportarConflicto/adicionar' do
    params.inspect
+end
+
+get '/reporte/enviado' do
+   erb :informacionEnviada
 end

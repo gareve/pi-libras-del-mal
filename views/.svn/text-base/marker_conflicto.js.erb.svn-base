@@ -19,25 +19,6 @@ var popUpdata = '<div id="<%= conflicto.id %>">Este div tiene id = <%= conflicto
 
 marker<%= conflicto.id %>.bindPopup(popUpdata);
 
-$.ajax({
-   type: 'GET',
-   url: '/<%= locale %>/conflictoMiniInfo/<%= conflicto.id %>',
-   success:function(data){
-      //console.log(data);
-      <% if toForm == true%>
-         data = "<a href='/<%= locale+'/reportarConflicto/'+conflicto.id.to_s %>'>Confirmar/Completar Conflicto</a><br/>" + data;
-      <% end %>
-      <% if highlightMarker %>
-         data = '#############' + popUpdata;
-         marker<%= conflicto.id %>.setIcon(greenIcon);
-      <% end %>
-      marker<%= conflicto.id %>.bindPopup(data);
-   },
-   error:function(){
-      console.log('Error');
-   }
-});
-
 <% if toForm == false %>
    var markerE<%= conflicto.id %> = L.marker(
                                          [<%= conflicto.lugares.first.y %>,
@@ -50,3 +31,27 @@ $.ajax({
       terminadoAr.push(markerE<%= conflicto.id %>);
    <% end %>
 <% end %>
+
+$.ajax({
+   type: 'GET',
+   url: '/<%= locale %>/conflictoMiniInfo/<%= conflicto.id %>',
+   success:function(data){
+      //console.log(data);
+      <% if toForm == true%>
+         data = "<a href='/<%= locale+'/reportarConflicto/'+conflicto.id.to_s %>'>Confirmar/Completar Conflicto</a><br/>" + data;
+      <% end %>
+
+      <% if highlightMarker %>
+         //data = '#############' + popUpdata;
+         marker<%= conflicto.id %>.setIcon(updateIcon);
+      <% end %>
+      marker<%= conflicto.id %>.bindPopup(data);
+
+      <% if toForm == false %>
+         markerE<%= conflicto.id %>.bindPopup(data);
+      <% end %>
+   },
+   error:function(){
+      console.log('Error');
+   }
+});

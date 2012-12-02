@@ -1,26 +1,33 @@
-
-<b>ID: <%= @id %></b> <br/>
 <b><%= t.conflicto.asunto %>:</b><br/>
 <div class="infoTooltip"><%= @conflicto.asunto %></div>
 <!--<br/>-->
 <b>Demandantes:</b><br/>
 <div class="infoTooltip">
-  <% @conflicto.demandantes.each do |demandante| %>
+  <% @conflicto.demandantes.first(2).each do |demandante| %>
    + <%= demandante.actor + '/' + demandante.sector %></br>
+<% end %>
+<% if @conflicto.demandantes.size() > 2%>
+   ...
 <% end %>
 </div>
 <!--<hr/>-->
 <b>Demandados:</b><br/>
 <div class="infoTooltip">
-  <% @conflicto.demandados.each do |demandado| %>
-   + <%= demandado.actor + '/' + demandado.sector %></br>
+   <% @conflicto.demandados.first(2).each do |demandado| %>
+      + <%= demandado.actor + '/' + demandado.sector %></br>
+   <% end %>
+<% if @conflicto.demandados.size() > 2%>
+   ...
 <% end %>
 </div>
 <!--<hr/>-->
 <b>Lugares:</b><br/>
 <div class="infoTooltip">
-  <% @conflicto.lugares.each do |lugar| %>
+  <% @conflicto.lugares.first(2).each do |lugar| %>
 + <%= lugar.departamento + '/' + lugar.localidad %></br>
+<% end %>
+<% if @conflicto.lugares.size() > 2%>
+   ...
 <% end %>
 </div>
 <hr />
